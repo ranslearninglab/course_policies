@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <title>Course Policies</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
-
   :root{
     --paper:#F3EEE2;
     --paper-line:#E4DAC4;
@@ -17,12 +15,16 @@
     --brass-tint:#F1E7D2;
     --rust:#A0473C;
     --rust-tint:#F2E1DC;
+    --plum:#6B4A73;
+    --plum-tint:#ECE3EE;
+    --slate:#3C6178;
+    --slate-tint:#E1EAEF;
   }
 
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;background:#BFD9EF;}
   body{
-    font-family:'Inter',sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     display:flex;
     justify-content:center;
     padding:26px 0 40px;
@@ -54,6 +56,51 @@
     margin-bottom:18px;
   }
 
+  .eyebrow{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--teal);
+    font-weight:700;
+    margin:0 0 6px 0;
+  }
+
+  h1{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:700;
+    font-size:32px;
+    color:var(--ink);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  /* ---- category legend ---- */
+  .legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .legend-item{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:10.5px;
+    font-weight:700;
+    padding:6px 10px;
+    border-radius:20px;
+    border:1px solid currentColor;
+    white-space:nowrap;
+  }
+  .legend-item svg{width:13px;height:13px;stroke-width:2;flex-shrink:0;}
+  .legend-item.rust{color:var(--rust); background:var(--rust-tint);}
+  .legend-item.teal{color:var(--teal); background:var(--teal-tint);}
+  .legend-item.plum{color:var(--plum); background:var(--plum-tint);}
+  .legend-item.brass{color:var(--brass); background:var(--brass-tint);}
+  .legend-item.slate{color:var(--slate); background:var(--slate-tint);}
+
   /* ---- search bar ---- */
   .searchbar{
     display:flex;
@@ -75,20 +122,22 @@
     border:none;
     background:transparent;
     outline:none;
-    font-family:'Inter',sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     font-size:13.5px;
     color:var(--ink);
   }
   .searchbar input::placeholder{color:#9AA3AC;}
   .searchbar .result-count{
-    font-family:'IBM Plex Mono',monospace;
+    font-family:Arial, Helvetica, sans-serif;
     font-size:10.5px;
+    font-weight:700;
     color:var(--teal);
     white-space:nowrap;
   }
   .searchbar .clear-btn{
-    font-family:'IBM Plex Mono',monospace;
+    font-family:Arial, Helvetica, sans-serif;
     font-size:10.5px;
+    font-weight:700;
     color:var(--ink-soft);
     background:#EAF3FB;
     border:1px solid var(--paper-line);
@@ -114,33 +163,21 @@
     .searchbar{display:none;}
   }
 
-  .eyebrow{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:11px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--teal);
-    font-weight:600;
-    margin:0 0 6px 0;
-  }
-
-  h1{
-    font-family:'Fraunces',serif;
+  /* ---- section group headers ---- */
+  .group-title{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:13px;
     font-weight:700;
-    font-size:34px;
-    color:var(--ink);
-    margin:0;
-    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    margin:20px 0 8px;
   }
-
-  .course-tag{
-    text-align:right;
-    font-family:'IBM Plex Mono',monospace;
-    font-size:11px;
-    color:var(--ink-soft);
-    line-height:1.7;
-  }
-  .course-tag strong{color:var(--ink); font-size:12px; letter-spacing:.04em;}
+  .group-title:first-of-type{margin-top:0;}
+  .group-title.rust{color:var(--rust);}
+  .group-title.teal{color:var(--teal);}
+  .group-title.plum{color:var(--plum);}
+  .group-title.brass{color:var(--brass);}
+  .group-title.slate{color:var(--slate);}
 
   .stack{
     display:flex;
@@ -170,16 +207,21 @@
   .rail.teal{background:var(--teal-tint);}
   .rail.brass{background:var(--brass-tint);}
   .rail.rust{background:var(--rust-tint);}
+  .rail.plum{background:var(--plum-tint);}
+  .rail.slate{background:var(--slate-tint);}
 
   .rail .icon-main{width:26px;height:26px;stroke-width:1.8;}
   .rail.teal .icon-main{color:var(--teal);}
   .rail.brass .icon-main{color:var(--brass);}
   .rail.rust .icon-main{color:var(--rust);}
+  .rail.plum .icon-main{color:var(--plum);}
+  .rail.slate .icon-main{color:var(--slate);}
 
   .rail .num{
-    font-family:'IBM Plex Mono',monospace;
+    font-family:Arial, Helvetica, sans-serif;
     font-size:10px;
     letter-spacing:.05em;
+    font-weight:700;
     color:var(--ink-soft);
   }
 
@@ -200,25 +242,27 @@
   }
 
   h2{
-    font-family:'Fraunces',serif;
-    font-size:16.5px;
-    font-weight:600;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+    font-weight:700;
     color:var(--ink);
     margin:0;
     letter-spacing:-.01em;
   }
 
   .tag{
-    font-family:'IBM Plex Mono',monospace;
+    font-family:Arial, Helvetica, sans-serif;
     font-size:9.5px;
-    letter-spacing:.08em;
+    letter-spacing:.06em;
     text-transform:uppercase;
-    font-weight:600;
+    font-weight:700;
     white-space:nowrap;
   }
   .tag.teal{color:var(--teal);}
   .tag.brass{color:var(--brass);}
   .tag.rust{color:var(--rust);}
+  .tag.plum{color:var(--plum);}
+  .tag.slate{color:var(--slate);}
 
   .card p{
     font-size:12.3px;
@@ -237,6 +281,8 @@
   .card.rust-card mark{color:var(--rust);}
   .card.teal-card mark{color:var(--teal);}
   .card.brass-card mark{color:var(--brass);}
+  .card.plum-card mark{color:var(--plum);}
+  .card.slate-card mark{color:var(--slate);}
 
   /* keyword chip strip */
   .chips{
@@ -249,9 +295,9 @@
     display:flex;
     align-items:center;
     gap:4px;
-    font-family:'IBM Plex Mono',monospace;
+    font-family:Arial, Helvetica, sans-serif;
     font-size:9.5px;
-    font-weight:600;
+    font-weight:700;
     padding:3px 8px 3px 6px;
     border-radius:20px;
     border:1px solid currentColor;
@@ -261,9 +307,11 @@
   .chip.teal{color:var(--teal); background:var(--teal-tint);}
   .chip.brass{color:var(--brass); background:var(--brass-tint);}
   .chip.rust{color:var(--rust); background:var(--rust-tint);}
+  .chip.plum{color:var(--plum); background:var(--plum-tint);}
+  .chip.slate{color:var(--slate); background:var(--slate-tint);}
 
   .links{
-    font-family:'IBM Plex Mono',monospace;
+    font-family:Arial, Helvetica, sans-serif;
     font-size:10.5px;
     color:var(--ink-soft);
     display:flex;
@@ -272,8 +320,8 @@
     margin-top:2px;
   }
   .links span{display:flex; align-items:center; gap:6px;}
-  .links svg{width:12px;height:12px;stroke-width:2; flex-shrink:0; color:var(--brass);}
-  .links a{color:var(--brass); text-decoration:none; border-bottom:1px solid currentColor;}
+  .links svg{width:12px;height:12px;stroke-width:2; flex-shrink:0; color:var(--slate);}
+  .links a{color:var(--slate); text-decoration:none; border-bottom:1px solid currentColor;}
   .links a:hover{color:var(--ink);}
 
   footer{
@@ -283,7 +331,7 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
-    font-family:'IBM Plex Mono',monospace;
+    font-family:Arial, Helvetica, sans-serif;
     font-size:10px;
     color:var(--ink-soft);
   }
@@ -295,10 +343,17 @@
 
   <header>
     <div>
-      <p class="eyebrow">ETEC 510: The Design of Technology- Supported Learning Environments</p>
+      <p class="eyebrow">ETEC 510: The Design of Technology-Supported Learning Environments</p>
       <h1>Course Policies</h1>
     </div>
   </header>
+
+  <div class="legend">
+    <span class="legend-item teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Student Engagement &amp; Teaching Strategies</span>
+    <span class="legend-item plum"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Academic Integrity &amp; AI Policy</span>
+    <span class="legend-item brass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.5 5.5 3.5C14 6.5 15.5 5 17.5 5 21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"/></svg>Inclusion, Equity &amp; Respect</span>
+    <span class="legend-item slate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>Resources &amp; Analytics</span>
+  </div>
 
   <div class="searchbar">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -308,6 +363,8 @@
   </div>
 
   <div class="stack">
+
+    <p class="group-title rust">Assessment &amp; Grading</p>
 
     <!-- 1 Late Policy -->
     <div class="card rust-card">
@@ -334,7 +391,7 @@
     <!-- 2 Feedback -->
     <div class="card rust-card">
       <div class="rail rust">
-        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
         <span class="num">02</span>
       </div>
       <div class="body">
@@ -350,16 +407,44 @@
       </div>
     </div>
 
-    <!-- 3 Expectations -->
-    <div class="card teal-card">
-      <div class="rail teal">
-        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+    <!-- 3 Grading Guidelines -->
+    <div class="card rust-card">
+      <div class="rail rust">
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
         <span class="num">03</span>
       </div>
       <div class="body">
         <div class="top-row">
-          <h2>Expectations</h2>
-          <span class="tag teal">Participation</span>
+          <h2>UBC Grading Guidelines &ndash; Master's Level</h2>
+          <span class="tag rust">Assessment &amp; Grading</span>
+        </div>
+        <p><mark>A level (80&ndash;100%)</mark> &mdash; Good to excellent work, with strong comprehension, use of literature, and integration of critical and creative perspectives. <mark>B level (68&ndash;79%)</mark> &mdash; Adequate work, with some problems in comprehension or engagement. <mark>C level (60&ndash;67%)</mark> &mdash; Seriously flawed, with minimal integration of critical perspectives. <mark>F (0&ndash;59%)</mark> &mdash; Failing. See the UBC Academic Calendar for full details.</p>
+        <div class="chips">
+          <span class="chip rust">A+ 90&ndash;100%</span>
+          <span class="chip rust">A 85&ndash;89%</span>
+          <span class="chip rust">A- 80&ndash;84%</span>
+          <span class="chip rust">B+ 76&ndash;79%</span>
+          <span class="chip rust">B 72&ndash;75%</span>
+          <span class="chip rust">B- 68&ndash;71%</span>
+          <span class="chip rust">C+ 64&ndash;67%</span>
+          <span class="chip rust">C 60&ndash;63%</span>
+          <span class="chip rust">F 0&ndash;59%</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="group-title teal">Student Engagement &amp; Teaching Strategies</p>
+
+    <!-- 4 Student Expectations -->
+    <div class="card teal-card">
+      <div class="rail teal">
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span class="num">04</span>
+      </div>
+      <div class="body">
+        <div class="top-row">
+          <h2>Student Expectations</h2>
+          <span class="tag teal">Student Engagement &amp; Teaching Strategies</span>
         </div>
         <p>Students are expected to login to the course <mark>several times a week</mark> and are responsible for checking course announcements and updates.</p>
         <div class="chips">
@@ -369,77 +454,16 @@
       </div>
     </div>
 
-    <!-- 4 Academic Integrity -->
+    <!-- 5 Meaningful Discussion Contributions -->
     <div class="card teal-card">
       <div class="rail teal">
-        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>
-        <span class="num">04</span>
-      </div>
-      <div class="body">
-        <div class="top-row">
-          <h2>Academic Integrity</h2>
-          <span class="tag teal">Conduct</span>
-        </div>
-        <p>Students are expected to follow UBC policies for academic integrity and academic misconduct, which includes practices around <mark>plagiarism</mark>, <mark>referencing and citation</mark>, and <mark>copyright</mark>.</p>
-        <div class="chips">
-          <span class="chip teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>plagiarism</span>
-          <span class="chip teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>referencing &amp; citation</span>
-          <span class="chip teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>copyright</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 5 Generative AI -->
-    <div class="card brass-card">
-      <div class="rail brass">
-        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         <span class="num">05</span>
       </div>
       <div class="body">
         <div class="top-row">
-          <h2>Use of Generative AI Tools</h2>
-          <span class="tag brass">Academic Integrity</span>
-        </div>
-        <p>If generative artificial intelligence tools are employed by the student to complete any coursework, the generated material must be <mark>clearly and correctly indicated</mark>, and cited/referenced using <mark>APA referencing style for generative AI</mark>. Failure to do so will be reported as academic misconduct.</p>
-        <p>Students should consult the instructor if they have any questions about the use of generative AI tools.</p>
-        <div class="chips">
-          <span class="chip brass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg>disclose AI use</span>
-          <span class="chip brass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>APA citation</span>
-          <span class="chip brass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>ask instructor first</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 6 Teaching Strategies -->
-    <div class="card teal-card">
-      <div class="rail teal">
-        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        <span class="num">06</span>
-      </div>
-      <div class="body">
-        <div class="top-row">
-          <h2>Teaching Strategies</h2>
-          <span class="tag teal">Course Design</span>
-        </div>
-        <p>This course uses an <mark>open textbook</mark> as well as other resources including case studies, online videos and other online reference materials, along with facilitated <mark>online discussions</mark>, <mark>group work</mark> and iterative assignment work to reach course outcomes.</p>
-        <div class="chips">
-          <span class="chip teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>open textbook</span>
-          <span class="chip teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>case studies &amp; video</span>
-          <span class="chip teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h1M14 21v-2a5 5 0 0 1 5-5h0"/></svg>group work</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 7 Discussion Contributions -->
-    <div class="card teal-card">
-      <div class="rail teal">
-        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.5A8.5 8.5 0 1 1 21 11.5z"/></svg>
-        <span class="num">07</span>
-      </div>
-      <div class="body">
-        <div class="top-row">
-          <h2>Discussion Contributions</h2>
-          <span class="tag teal">Participation</span>
+          <h2>Meaningful Discussion Contributions</h2>
+          <span class="tag teal">Student Engagement &amp; Teaching Strategies</span>
         </div>
         <p>Students should contribute activity to online discussions, posting <mark>not just once, but multiple times</mark>. A productive comment is one that <mark>furthers the conversation</mark>, asks questions of other students, and builds upon the existing points already made.</p>
         <div class="chips">
@@ -450,35 +474,104 @@
       </div>
     </div>
 
-    <!-- 8 Netiquette -->
-    <div class="card rust-card">
-      <div class="rail rust">
-        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M8 21h8M12 17v4"/></svg>
-        <span class="num">08</span>
+    <!-- 6 Integrated Teaching Strategies -->
+    <div class="card teal-card">
+      <div class="rail teal">
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span class="num">06</span>
       </div>
       <div class="body">
         <div class="top-row">
-          <h2>Netiquette &amp; Online Code of Conduct</h2>
-          <span class="tag rust">Conduct</span>
+          <h2>Integrated Teaching Strategies</h2>
+          <span class="tag teal">Student Engagement &amp; Teaching Strategies</span>
         </div>
-        <p>We expect the <mark>same standards of behavior online</mark> as in a campus environment &mdash; respecting fellow students and avoiding racist, sexist, or other comments likely to cause offence. Be familiar with and adhere to the University's <mark>Information Systems Policy</mark>.</p>
+        <p>This course uses an <mark>open textbook</mark> as well as other resources including case studies, online videos and other online reference materials, along with facilitated <mark>online discussions</mark>, <mark>group work</mark> and iterative assignment work to reach course outcomes.</p>
         <div class="chips">
-          <span class="chip rust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>same as on campus</span>
-          <span class="chip rust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>no offensive comments</span>
+          <span class="chip teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>open textbook</span>
+          <span class="chip teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>case studies &amp; video</span>
+          <span class="chip teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h1M14 21v-2a5 5 0 0 1 5-5h0"/></svg>group work</span>
         </div>
       </div>
     </div>
 
-    <!-- 9 Inclusive Language -->
-    <div class="card brass-card">
-      <div class="rail brass">
-        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.5 5.5 3.5C14 6.5 15.5 5 17.5 5 21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"/></svg>
+    <p class="group-title plum">Academic Integrity &amp; AI Policy</p>
+
+    <!-- 7 Academic Integrity Standards -->
+    <div class="card plum-card">
+      <div class="rail plum">
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span class="num">07</span>
+      </div>
+      <div class="body">
+        <div class="top-row">
+          <h2>Academic Integrity Standards</h2>
+          <span class="tag plum">Academic Integrity &amp; AI Policy</span>
+        </div>
+        <p>Students are expected to follow UBC policies for academic integrity and academic misconduct, which includes practices around <mark>plagiarism</mark>, <mark>referencing and citation</mark>, and <mark>copyright</mark>.</p>
+        <div class="chips">
+          <span class="chip plum"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>plagiarism</span>
+          <span class="chip plum"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>referencing &amp; citation</span>
+          <span class="chip plum"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>copyright</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 Generative AI Policy -->
+    <div class="card plum-card">
+      <div class="rail plum">
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span class="num">08</span>
+      </div>
+      <div class="body">
+        <div class="top-row">
+          <h2>Generative AI Policy</h2>
+          <span class="tag plum">Academic Integrity &amp; AI Policy</span>
+        </div>
+        <p>If generative artificial intelligence tools are employed by the student to complete any coursework, the generated material must be <mark>clearly and correctly indicated</mark>, and cited/referenced using <mark>APA referencing style for generative AI</mark>. Failure to do so will be reported as academic misconduct.</p>
+        <p>Students should consult the instructor if they have any questions about the use of generative AI tools.</p>
+        <div class="chips">
+          <span class="chip plum"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg>disclose AI use</span>
+          <span class="chip plum"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>APA citation</span>
+          <span class="chip plum"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>ask instructor first</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 Defining Academic Misconduct -->
+    <div class="card plum-card">
+      <div class="rail plum">
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
         <span class="num">09</span>
       </div>
       <div class="body">
         <div class="top-row">
-          <h2>Inclusive Language &ndash; Pronouns</h2>
-          <span class="tag brass">Community</span>
+          <h2>Defining Academic Misconduct</h2>
+          <span class="tag plum">Academic Integrity &amp; AI Policy</span>
+        </div>
+        <p>Academic misconduct includes <mark>cheating</mark>, <mark>plagiarism</mark>, unauthorized resubmission of prior work, impersonation, submitting false records, falsifying documents, and failing to comply with a disciplinary measure. See the UBC Calendar for full definitions.</p>
+        <div class="chips">
+          <span class="chip plum">cheating</span>
+          <span class="chip plum">plagiarism</span>
+          <span class="chip plum">duplicate submission</span>
+          <span class="chip plum">impersonation</span>
+          <span class="chip plum">false records</span>
+          <span class="chip plum">falsified documents</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="group-title brass">Inclusion, Equity &amp; Respect</p>
+
+    <!-- 10 Inclusive Language & Pronouns -->
+    <div class="card brass-card">
+      <div class="rail brass">
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.5 5.5 3.5C14 6.5 15.5 5 17.5 5 21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"/></svg>
+        <span class="num">10</span>
+      </div>
+      <div class="body">
+        <div class="top-row">
+          <h2>Inclusive Language &amp; Pronouns</h2>
+          <span class="tag brass">Inclusion, Equity &amp; Respect</span>
         </div>
         <p>Pronouns are an important part of who we are. Using someone's <mark>correct pronouns</mark> validates their identity, helps them feel like they <mark>belong</mark>, and signals that you can be a supportive contact on campus.</p>
         <div class="chips">
@@ -488,16 +581,58 @@
       </div>
     </div>
 
-    <!-- 10 Accessibility -->
+    <!-- 11 Equity and Diversity at UBC -->
     <div class="card brass-card">
       <div class="rail brass">
-        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="1.6"/><path d="M5 8.5l7 1.5 7-1.5M12 10v11M8 21l4-6 4 6"/></svg>
-        <span class="num">10</span>
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.5 5.5 3.5C14 6.5 15.5 5 17.5 5 21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"/></svg>
+        <span class="num">11</span>
       </div>
       <div class="body">
         <div class="top-row">
-          <h2>Accessibility</h2>
-          <span class="tag brass">Support</span>
+          <h2>Equity and Diversity at UBC</h2>
+          <span class="tag brass">Inclusion, Equity &amp; Respect</span>
+        </div>
+        <p>UBC embraces <mark>equity and diversity</mark> as integral to our academic mission, fostering the <mark>inclusion of voices</mark> that have been underrepresented or excluded, so that <mark>all can contribute</mark> and <mark>all can thrive</mark>.</p>
+        <p>An environment that fosters equity inspires innovation in teaching, research, scholarship, and service, and makes UBC a welcoming destination for the <mark>best and brightest</mark> faculty, staff, and students.</p>
+        <div class="chips">
+          <span class="chip brass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h1M14 21v-2a5 5 0 0 1 5-5h0"/></svg>all can contribute &amp; thrive</span>
+          <span class="chip brass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>underrepresented voices included</span>
+          <span class="chip brass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>inspires innovation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 Netiquette & Online Conduct -->
+    <div class="card brass-card">
+      <div class="rail brass">
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.5 5.5 3.5C14 6.5 15.5 5 17.5 5 21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"/></svg>
+        <span class="num">12</span>
+      </div>
+      <div class="body">
+        <div class="top-row">
+          <h2>Netiquette &amp; Online Conduct</h2>
+          <span class="tag brass">Inclusion, Equity &amp; Respect</span>
+        </div>
+        <p>We expect the <mark>same standards of behavior online</mark> as in a campus environment &mdash; respecting fellow students and avoiding racist, sexist, or other comments likely to cause offence. Be familiar with and adhere to the University's <mark>Information Systems Policy</mark>.</p>
+        <div class="chips">
+          <span class="chip brass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>same as on campus</span>
+          <span class="chip brass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>no offensive comments</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="group-title slate">Resources &amp; Analytics</p>
+
+    <!-- 13 Accessibility & Accommodations -->
+    <div class="card slate-card">
+      <div class="rail slate">
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+        <span class="num">13</span>
+      </div>
+      <div class="body">
+        <div class="top-row">
+          <h2>Accessibility &amp; Accommodations</h2>
+          <span class="tag slate">Resources &amp; Analytics</span>
         </div>
         <p>If you have any challenges accessing materials that will impact your success in this course, UBC's <mark>Centre for Accessibility</mark> can support your needs by providing <mark>appropriate accommodations</mark>.</p>
         <div class="links">
@@ -507,31 +642,45 @@
       </div>
     </div>
 
-    <!-- 11 Equity and Diversity -->
-    <div class="card brass-card">
-      <div class="rail brass">
-        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>
-        <span class="num">11</span>
+    <!-- 14 Faculty & University Resources -->
+    <div class="card slate-card">
+      <div class="rail slate">
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+        <span class="num">14</span>
       </div>
       <div class="body">
         <div class="top-row">
-          <h2>Equity and Diversity at UBC</h2>
-          <span class="tag brass">Community</span>
+          <h2>Faculty &amp; University Resources</h2>
+          <span class="tag slate">Resources &amp; Analytics</span>
         </div>
-        <p>UBC embraces <mark>equity and diversity</mark> as integral to our academic mission. We encourage and support participation of the widest range of perspectives in our exploration and exchange of knowledge and ideas. An essential component of academic excellence is a truly open and diverse community that actively fosters the <mark>inclusion of voices</mark> that have been underrepresented or excluded. Thus, UBC is committed to fostering a living, learning, and working environment to which <mark>all can contribute</mark> and within which <mark>all can thrive</mark>.</p>
-        <p>An environment that fosters equity inspires innovation in teaching, research, scholarship, and service. It enhances wide-reaching opportunities for mentoring. Its diverse communities and varied experience and expertise will make it a welcoming destination for the <mark>best and brightest</mark> faculty, staff, and students.</p>
+        <p>The <mark>Faculty of Education</mark> has a number of resources to support student learning. UBC also provides broader support for <mark>healthy lifestyles</mark> and for <mark>survivors of sexual violence</mark>, and does not tolerate <mark>harassment or discrimination</mark>. UBC provides accommodation for students with disabilities and for religious and cultural observances &mdash; see the UBC Senate website for details.</p>
         <div class="chips">
-          <span class="chip brass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h1M14 21v-2a5 5 0 0 1 5-5h0"/></svg>all can contribute &amp; thrive</span>
-          <span class="chip brass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>underrepresented voices included</span>
-          <span class="chip brass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>inspires innovation</span>
+          <span class="chip slate">Faculty of Education support</span>
+          <span class="chip slate">sexual violence support</span>
+          <span class="chip slate">harassment-free environment</span>
         </div>
+      </div>
+    </div>
+
+    <!-- 15 Learning Analytics -->
+    <div class="card slate-card">
+      <div class="rail slate">
+        <svg class="icon-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+        <span class="num">15</span>
+      </div>
+      <div class="body">
+        <div class="top-row">
+          <h2>Learning Analytics</h2>
+          <span class="tag slate">Resources &amp; Analytics</span>
+        </div>
+        <p>Some course technologies collect data to support teaching and learning, including <mark>overall class progress</mark> for personalized feedback, <mark>discussion engagement</mark> to foster community, and <mark>resource access patterns</mark> to improve course design. Learn more via "What is Learning Analytics?"</p>
       </div>
     </div>
 
   </div>
 
   <footer>
-    <span>Course Syllabus &mdash; Assessment, Expectations &amp; Community Standards</span>
+    <span>Course Syllabus &mdash; Assessment, Engagement &amp; Community Standards</span>
     <span>UBC</span>
   </footer>
 
